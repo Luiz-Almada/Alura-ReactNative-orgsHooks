@@ -6,7 +6,7 @@ export default function Produtor({nome, imagem, distancia, estrelas}) {
     <View style={estilos.cartao}>
       <Image style={estilos.imagem} source={imagem} accessibilityLabel={nome} />
       <View style={estilos.informacoes}>
-      <Text style={estilos.nome}>{nome}</Text>
+        <Text style={estilos.nome}>{nome}</Text>
         <Text style={estilos.distancia}>{distancia}</Text>
       </View>
     </View>
@@ -20,6 +20,18 @@ const estilos = StyleSheet.create({
     marginHorizontal: 16,
     borderRadius: 6,
     flexDirection: 'row',
+    
+    //sombra no android
+    elevation: 4,
+
+    //iOs
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
   },
   imagem: {
     width: 48,
@@ -44,5 +56,5 @@ const estilos = StyleSheet.create({
   distancia: {
     fontSize: 12,
     lineHeight: 19,
-  }
-})
+  },
+});
